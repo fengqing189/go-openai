@@ -31,3 +31,14 @@ func DefaultConfig(authToken string) ClientConfig {
 		EmptyMessagesLimit: defaultEmptyMessagesLimit,
 	}
 }
+
+func MyConfig(authToken string, apiURL string) ClientConfig {
+	return ClientConfig{
+		HTTPClient: &http.Client{},
+		BaseURL:    apiURL,
+		OrgID:      "",
+		authToken:  authToken,
+
+		EmptyMessagesLimit: defaultEmptyMessagesLimit,
+	}
+}
